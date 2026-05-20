@@ -13,13 +13,13 @@ def exibir_dados_clientes():
     if conexao:
         cursor = conexao.cursor()
 
-        cursor.execute("SELECT * FROM clientes")
+        cursor.execute("SELECT cpf, nome, data_nascimento, pontos, contato, email FROM clientes")
         resultados = cursor.fetchall()
 
         print("\nClientes:")
 
         for cpf, nome, data_nascimento, pontos, contato, email in resultados:
-            print(f"CPF: {cpf} | Nome: {nome} | Data nascimento: {data_nascimento} | Pontos: {pontos} | Contato: {contato} | Email: {email}")
+            print(f"Nome: {nome} | Data nascimento: {data_nascimento} | Pontos: {pontos} | Contato: {contato} | Email: {email}")
 
         cursor.close()
         conexao.close()
