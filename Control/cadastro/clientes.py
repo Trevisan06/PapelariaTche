@@ -19,12 +19,12 @@ def inserir_dados_clientes():
         dataNascimento = input("Data de nascimento: ")
         pontos = int(input("Pontos: "))
         contato = int(input("Contato: "))
-        email = input("Email: "
-        dividas = input("dividas"))
+        email = input("Email: ")
+        dividas = input("Dividas: ")
 
         sql = "INSERT INTO clientes (cpf, nome, dataNascimento, pontos, contato, email) VALUES (%s, %s, %s, %s, %s, %s)"
 
-        values = (cpf, nome, data_nascimento, pontos, contato, email)
+        values = (cpf, nome, dataNascimento, pontos, contato, email)
 
         cursor.execute(sql, values)
         conexao.commit()
