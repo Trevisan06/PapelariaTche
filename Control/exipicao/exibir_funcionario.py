@@ -13,13 +13,13 @@ def exibir_dados_funcionario():
     if conexao:
         cursor = conexao.cursor()
 
-        cursor.execute("SELECT * FROM funcionario")
+        cursor.execute("SELECT id_funcionario, nome, cargo,telefone, matricula, meta_vendas, id_filial FROM funcionario")
         resultados = cursor.fetchall()
 
         print("\nFuncionário:")
 
-        for id_funcionario, nome, cargo, salario, telefone, matricula, meta_vendas, id_filial in resultados:
-            print(f"ID: {id_funcionario} | Nome: {nome} | Cargo: {cargo} | Salário: {salario} | Telefone: {telefone} | Matrícula: {matricula} | Meta de vendas: {meta_vendas} | ID Filial: {id_filial}")
+        for id_funcionario, nome, cargo,telefone, matricula, meta_vendas, id_filial in resultados:
+            print(f"ID: {id_funcionario} | Nome: {nome} | Cargo: {cargo} |Telefone: {telefone} | Matrícula: {matricula} | Meta de vendas: {meta_vendas} | ID Filial: {id_filial}")
 
         cursor.close()
         conexao.close()
