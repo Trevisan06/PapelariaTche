@@ -13,13 +13,13 @@ def exibir_dados_filial():
     if conexao:
         cursor = conexao.cursor()
 
-        cursor.execute("SELECT * FROM filial")
+        cursor.execute("SELECT id_filial, nome_filial, cidade, estado, telefone, gerente, quantidade_funcionarios, horario_funcionamento, email FROM filial")
         resultados = cursor.fetchall()
 
         print("\nFilial:")
 
-        for id_filial, nome_filial, cidade, estado, endereco, telefone, gerente, quantidade_funcionarios, horario_funcionamento, email, cpf_cliente in resultados:
-            print(f"ID: {id_filial} | Nome: {nome_filial} | Cidade: {cidade} | Estado: {estado} | Endereço: {endereco} | Telefone: {telefone} | Gerente: {gerente} | Funcionários: {quantidade_funcionarios} | Horário: {horario_funcionamento} | Email: {email} | CPF Cliente: {cpf_cliente}")
+        for id_filial, nome_filial, cidade, estado, telefone, gerente, quantidade_funcionarios, horario_funcionamento, email in resultados:
+            print(f"ID: {id_filial} | Nome: {nome_filial} | Cidade: {cidade} | Estado: {estado} |  Telefone: {telefone} | Gerente: {gerente} | Funcionários: {quantidade_funcionarios} | Horário: {horario_funcionamento} | Email: {email} |
 
         cursor.close()
         conexao.close()
