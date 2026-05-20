@@ -13,13 +13,13 @@ def exibir_dados_pedido_online():
     if conexao:
         cursor = conexao.cursor()
 
-        cursor.execute("SELECT * FROM pedidoOnline")
+        cursor.execute("SELECT id_pedido, data_pedido, valor_pedido, forma_entrega, status_entrega FROM pedidoOnline")
         resultados = cursor.fetchall()
 
         print("\nPedido Online:")
 
-        for id_pedido, data_pedido, valor_pedido, forma_entrega, status_entrega, endereco_entrega, cpf_cliente in resultados:
-            print(f"ID: {id_pedido} | Data: {data_pedido} | Valor: {valor_pedido} | Forma entrega: {forma_entrega} | Status: {status_entrega} | Endereço: {endereco_entrega} | CPF Cliente: {cpf_cliente}")
+        for id_pedido, data_pedido, valor_pedido, forma_entrega, status_entrega in resultados:
+            print(f"ID: {id_pedido} | Data: {data_pedido} | Valor: {valor_pedido} | Forma entrega: {forma_entrega} | Status: {status_entrega} | 
 
         cursor.close()
         conexao.close()
