@@ -13,13 +13,13 @@ def exibir_dados_compra():
     if conexao:
         cursor = conexao.cursor()
 
-        cursor.execute("SELECT * FROM compra")
+        cursor.execute("SELECT id_compra, data_compra, valor_compra, forma_pagamento, quantidade_itens, cod_produto FROM compra")
         resultados = cursor.fetchall()
 
         print("\nCompra:")
 
-        for id_compra, data_compra, valor_compra, forma_pagamento, quantidade_itens, id_funcionario, cod_produto in resultados:
-            print(f"ID: {id_compra} | Data: {data_compra} | Valor: {valor_compra} | Pagamento: {forma_pagamento} | Quantidade itens: {quantidade_itens} | ID Funcionário: {id_funcionario} | Código Produto: {cod_produto}")
+        for id_compra, data_compra, valor_compra, forma_pagamento, quantidade_itens, cod_produto in resultados:
+            print(f"ID: {id_compra} | Data: {data_compra} | Valor: {valor_compra} | Pagamento: {forma_pagamento} | Quantidade itens: {quantidade_itens} | Código Produto: {cod_produto}")
 
         cursor.close()
         conexao.close()
