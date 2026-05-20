@@ -13,7 +13,7 @@ def exibir_dados_categoria():
     if conexao:
         cursor = conexao.cursor()
 
-        cursor.execute("SELECT * FROM categoria")
+        cursor.execute("SELECT id_categoria, nome_categoria, descricao, setor, fileira, relevancia, cpf_cliente FROM categoria")
         resultados = cursor.fetchall()
 
         print("\nCategoria:")
